@@ -15,10 +15,10 @@ class Solution:
         # return round(your_answer, 5)
         pre_act = np.sum(x*w, axis = 0) + b
         if activation == 'sigmoid':
-            pre_act = 1/(1+np.exp(-pre_act))
+            result = 1/(1+np.exp(-pre_act))
         elif activation == 'relu':
-            pre_act = np.maximum(0, pre_act)
+            result = np.maximum(0, pre_act)
         else:
-            return 0
+            result = pre_act
         
-        return np.round(pre_act, 5)
+        return np.round(result, 5)
